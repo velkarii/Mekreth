@@ -27,6 +27,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Min(currentHealth, maxHealth); 
+        healthBar.value = currentHealth;
+        Debug.Log("HP: " + currentHealth);
+    }
+
     void Die()
     {
         Debug.Log("Player died!");

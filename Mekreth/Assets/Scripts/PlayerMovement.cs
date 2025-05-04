@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
-    public float gravity = 10f;
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
 
@@ -36,10 +35,6 @@ public class PlayerMovement : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
 
         characterController.Move(moveDirection * Time.deltaTime);
 

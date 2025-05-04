@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 546183254}
   - component: {fileID: 546183253}
   - component: {fileID: 546183256}
+  - component: {fileID: 546183257}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -374,9 +375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 788423322}
-  walkSpeed: 6
-  runSpeed: 12
-  gravity: 10
+  walkSpeed: 20
+  runSpeed: 30
   lookSpeed: 2
   lookXLimit: 45
 --- !u!143 &546183254
@@ -435,6 +435,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 2134165242}
+--- !u!114 &546183257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546183252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370320ab97dd1ca4c8d025e990ec8012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healKey: 105
+  healAmount: 25
+  healCooldown: 5
 --- !u!1 &607478898
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +880,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -496.09998, y: 303.7}
-  m_SizeDelta: {x: -0.000030518, y: 0}
+  m_SizeDelta: {x: -80, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1885556201
 GameObject:
@@ -1091,7 +1106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -8.700012, y: -72.2}
   m_SizeDelta: {x: -1074, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2134165242
