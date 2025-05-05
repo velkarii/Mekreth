@@ -6,6 +6,8 @@ namespace Movement.FinalCharacterController
     [DefaultExecutionOrder(-2)]
     public class PlayerLocomotionInput : MonoBehaviour, PlayerControls.IPlayerLocomotionMapActions
     {
+        [SerializeField] private bool holdToSprint = true;
+        public bool SprintToggledOn { get; private set; }
         public PlayerControls PlayerControls { get; private set; }
         public Vector2 MovementInput { get; private set; }
         public Vector2 LookInput { get; private set; }
@@ -34,6 +36,18 @@ namespace Movement.FinalCharacterController
         public void OnLook(InputAction.CallbackContext context)
         {
             LookInput = context.ReadValue<Vector2>();
+        }
+
+        public void OnSprint(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                SprintToggledOn = holdToSprint || !SprintToggledOn;
+            }
+            else if (context.canceled)
+            {
+                SprintToggledOn = !holdToSprint && SprintToggledOn;
+            }
         }
     }
 }
